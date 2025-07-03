@@ -1,0 +1,300 @@
+/************************MAIN****************************/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../slike/index_background.jpg") center/cover fixed no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* Header, main (fills remaining space), footer */
+    grid-template-areas:
+        "header"
+        "main" 
+        "footer"
+    ;
+}
+
+h3 {
+    font-size: xx-large;
+}
+
+input {
+    border-radius: 5px;
+    margin-top: 2%;
+    font-size: medium;
+}
+
+/************************GRID****************************/
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    position: relative;
+}
+
+header, main, footer {
+    /* margin-top: auto;    !!!*/
+    bottom: 0;
+    top: 0;
+}
+
+/************************user.php****************************/
+
+.kolicina {
+    font-size: large;
+}
+
+.ikone, .ikoneAdmin{
+    font-size: 60px;
+    display: flex;
+    /* Use Flexbox */
+    justify-content: space-between;
+    /* Space out the icons symmetrically */
+    align-items: center;
+    /* Align icons vertically */
+    width: 90%;
+    /* Adjust width to fit nicely, or use 100% if needed */
+    margin: 0 auto;
+    /* Center the whole div horizontally */
+    padding: 10px;
+    /* Optional: Add some padding */
+}
+
+.crte, .acc, .vpr, .crteB, .accB {
+    transition: all 0.3s ease;
+}
+
+.crte:hover, .acc:hover, .vpr:hover {
+    color: rgb(0, 124, 255);
+    font-size: 70px;
+}
+
+.crteB:hover, .accB:hover {
+    background-color: rgb(252, 155, 0);
+}
+
+.gumbM {
+    text-decoration: none;
+    margin: 5% auto 5% auto;
+    /* Center the buttons horizontally */
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    color: white;
+    border: solid white;
+    background-color: transparent;
+    font-size: xx-large;
+}
+
+.gumbM:hover {
+    background-color: rgb(0, 124, 255);
+    border-color: white;
+    font-size: 40px;
+}
+
+.stanje, .stanjeB {
+    background-color: rgb(0, 124, 255);
+    text-align: left;
+    margin: 3% 3%;
+    padding: 2% 2% 2% 5%;
+    border-radius: 5px;
+}
+
+.stanjeB {
+    background-color: rgb(252, 155, 0);
+}
+
+/************************meni.html****************************/
+
+.meni {
+    margin-left: 6%;
+    margin-top: 20%;
+}
+
+.gumbMeni {
+    text-align: left;
+    font-size: x-large;
+    transition: all 0.3s ease;
+}
+
+.gumbMeni:hover {
+    text-decoration: underline;
+    color: rgb(0, 124, 255);
+    font-size: 28px;
+}
+
+/************************profil.php****************************/
+
+.podatki {
+    text-align: left;
+    background-color: rgb(0, 124, 255);
+    padding: 3%;
+    margin: 5%;
+    border-radius: 5px;
+}
+
+/************************seznam.php****************************/
+
+.hrSeznam, .uporabniki {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+    font-size: x-large;
+}
+
+/************************zgodovina.php****************************/
+
+.mainZgodovina {
+    overflow: scroll;
+    font-size: medium;
+    border: solid rgb(0, 124, 255);
+    border-radius: 10px;
+}
+
+/************************GUMBI****************************/
+
+.gumb {
+    text-decoration: none;
+    margin: 5% auto 5% auto;
+    /* Center the buttons horizontally */
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    color: white;
+    border: solid white;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+.gumb:hover {
+    background-color: rgb(0, 124, 255);
+    border-color: white;
+    font-size: 28px;
+}
+
+/************************aboutUs.html****************************/
+
+.mainA{
+    overflow: scroll;
+}
+
+.mainAboutUs {
+    font-size: larger;
+    margin: 2% 2%;
+}
+
+.s0 {
+    text-align: left;
+    padding-right: 10%;
+}
+
+.s2 {
+    text-align: right;
+    padding-left: 10%;
+}
+
+/************************aboutUs.html****************************/
+
+iframe{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 25px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 5%;
+}
+
+iframe:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 10px rgba(0, 124, 255, 0.5);
+}
+
+/************************administrator.php****************************/
+
+.hrAdmin, .adminUporabnik{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.adminUporabnik{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px 10px rgba(0, 124, 255, 0.5);
+    border-radius: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
+.adminUporabnik:hover{
+    transform: scale(1.1);
+}
+
+.mainAdmin{
+    overflow: scroll;
+    font-size: medium;
+}
+
+/************************info.html****************************/
+
+.slika{
+    height: 100px;  /*nastavimo slike na 100 * 100 da je bolj pregledno*/
+    width: 100px;
+    margin: 1% 1% 1% 1%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+    
+.slika:hover{
+    transform: scale(1.1);  /*slika se malo poveca*/
+    box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5); /*naredi fade effect okoli slike*/
+    opacity: 0.7;   /*naredi prozorno sliko*/
+}
+
+.mainInfo{
+    overflow: scroll;
+}
+
+/************************TELEFON****************************/
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                    url("../slike/index_background.jpg") center/cover fixed no-repeat;
+        /* Ensures the gradient and image are fixed and cover the entire viewport */
+    }
+    main{
+        overflow: hidden;
+    }
+    .ikoneAdmin{
+        width: 70%;
+    }
+    .slikaGraf{
+        border-radius: 20px;
+        height: 350px;
+        width: 350px;
+    }
+}
+
+/************************TELEFON****************************/
+
+@media (min-width: 769px) {
+    .slikaGraf{
+        height: 500px;
+        width: 500px;
+    }
+}

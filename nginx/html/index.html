@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log In</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="slike/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function novaStranReg() {
+            var newPageUrlReg = "html/registracija.html";
+            window.location.href = newPageUrlReg;
+            return false;
+        }
+
+        function novaStranPri() {
+            var newPageUrl = "html/user.php";
+            window.location.href = newPageUrl;
+        }
+
+        function handleLogin() {
+            var isAdmin = document.querySelector('input[name="choice"]:checked')?.value === "opcija1";
+            if (isAdmin){
+                document.querySelector("form").action = "html/administrator.php";
+            } 
+            else{
+                document.querySelector("form").action = "html/user.php";
+            }
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h3>Log In</h3>
+    </header>
+
+    <br><br>
+
+    <main>
+
+        <div class="prijava">
+            <!-- povemo kateri program se izvede, ko pritisnemo gumb "Prijava" -->
+            <!--metodo "post" uporabljamo ko pošiljamo podatke(zaupne) mysql serverju 
+                metodo "get" uporabljamo...-->
+            <form action="scripts/prijava.php" method="post">
+                <input type="text" name="username" placeholder="Uporabniško ime" class="username">
+                <br>
+                <input type="password" name="pwd" placeholder="Geslo" class="password">
+                <br>
+
+                <div class="gumbi">
+                    <button class="gumb" onclick="novaStranPri()">CONFIRM</button>
+                    <br>
+                    <button class="gumb" onclick="return novaStranReg()">CREATE AN ACCOUNT</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><i>&copy; 2025 Online bank</i></p>
+    </footer>
+
+</body>
+
+</html>

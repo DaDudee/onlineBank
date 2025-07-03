@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bitcoin Mining</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="icon" type="image/x-icon" href="slike/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <main>
+        <h3>Bitcoin Mining</h3>
+    </main>
+
+    <main>
+        <div class="bitcoin-amount" id="bitcoin-amount">0.00000000 BTC</div>
+        <div class="buttons">
+            <button class="gumb" onclick="startMining()">START MINING</button>
+            <button class="gumb" onclick="stopMining()">STOP MINING</button>
+            <form action="../scripts/mining.php" method="POST" id="withdrawForm" style="display: inline;">
+                <input type="hidden" name="balance" id="balanceInput">
+                <button type="submit" class="gumb">WITHDRAW</button>
+            </form>
+        </div>
+        <div id="terminal" class="terminal"></div>
+    </main>
+
+    <script>
+        let miningInterval;
+        let balance = 0.0;
+        let currentColorClass = '';
+
+        function generateRandomBitcoin() {
+            const min = 0.00000001;
+            const max = 0.00009000;
+            return (Math.random() * (max - min) + min).toFixed(8);
+        }
+
+        function generateRandomChars() {
+            const colors = ['color1', 'color2', 'color3'];
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            currentColorClass = colors[randomIndex];
+
+            let randomChars = '[+] ';
+            for (let i = 0; i < 12; i++) {
+                const char = String.fromCharCode(Math.floor(Math.random() * (122 - 48) + 48));
+                randomChars += char;
+            }
+            return randomChars;
+        }
+
+        function startMining() {
+            miningInterval = setInterval(() => {
+                const randomBitcoin = parseFloat(generateRandomBitcoin());
+                balance += randomBitcoin;
+                balance = parseFloat(balance.toFixed(8));
+                document.getElementById('bitcoin-amount').textContent = balance + ' BTC';
+
+                const randomChars = generateRandomChars();
+                const terminal = document.getElementById('terminal');
+                const newLine = document.createElement('div');
+                newLine.classList.add(currentColorClass);
+                newLine.textContent = randomChars;
+                terminal.appendChild(newLine);
+
+                terminal.scrollTop = terminal.scrollHeight;
+            }, 5000);
+        }
+
+        function stopMining() {
+            clearInterval(miningInterval);
+        }
+
+        document.getElementById('withdrawForm').addEventListener('submit', function () {
+            document.getElementById('balanceInput').value = balance;
+        });
+    </script>
+</body>
+
+</html>

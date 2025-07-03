@@ -1,0 +1,115 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../slike/index_background.jpg") center/cover fixed no-repeat;
+    height: 100%;
+}
+
+.heading, .ime, .stanje{
+    text-align: center;
+}
+
+.stanje{
+    background-color: rgb(252, 155, 0);
+    margin: 10% 10%;
+    padding: 3%;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.kolicina{
+    font-size: larger;
+    margin-left: 6%;
+}
+
+h1{
+    margin-left: 6%;
+}
+
+h2{
+    text-align: center;
+}
+
+.gumbi{
+    text-align: center;
+    padding: 0;
+}
+
+.gumb{
+    text-decoration: none;
+    background-color: transparent;
+    display: block;
+    color: white;
+    margin: 3% auto;
+    padding: 1%;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    border: solid white;
+    font-size: x-large;
+    text-align: center;
+}
+
+.gumb:hover{
+    background-color: rgb(252, 155, 0);
+    color: white;
+    border: solid white;
+    font-size: 27px;
+}
+
+hr{
+    margin: 30% 3% 0 3%;
+}
+
+.crte, .acc {
+    display: inline-block; /* Set both elements as inline blocks */
+    vertical-align: middle; /* Align elements vertically in the middle */
+    transition: all 0.3s ease;
+}
+
+.crte{
+    text-align: left;
+    margin-left: 4%;
+    font-size: 70px;
+}
+.crte:hover{
+    font-size: 75px;
+    color: rgb(252, 155, 0);
+}
+
+.acc{
+    font-size: 50px;
+    margin-left: 57%;
+}
+.acc:hover{
+    font-size: 55px;
+    color: rgb(252, 155, 0);
+}
+
+/* 480px --> telefon   481px — 768px: iPads, Tablets. 769px — 1024px: Small screens, laptops. 1025px — 1200px */
+@media only screen and (min-width: 769px) {
+
+    hr, .heading{
+        display: none;
+    }
+
+    .gumbi{
+        margin: 0;
+    }
+
+    .stanje{
+        margin: 0;
+        border-radius: 0px;
+    }
+
+    .ime{
+        margin: 0;
+        text-align: right;
+        margin-right: 5%;
+    }
+
+}

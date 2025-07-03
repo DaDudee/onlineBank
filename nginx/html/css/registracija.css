@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size:x-large;
+    color: white;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../slike/index_background.jpg") center/cover fixed no-repeat;
+    height: 100%;
+}
+
+.registracija{
+    font-size: xx-large;
+}
+
+.gumb{
+    text-decoration: none;
+    display: block;
+    color: white;
+    /* top, right, bottom, left */
+    padding-top: 20%;
+    padding: 1%;
+    margin: 3% auto;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    border: solid white;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+.gumb:hover {
+    background-color: rgb(0, 124, 255);
+    border-color: white;
+    color: white;
+    font-size: 28px;
+}

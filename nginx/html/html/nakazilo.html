@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transfer money</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="icon" type="image/x-icon" href="slike/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function novaStran() {
+            var newPageUrlOK = "user.php";
+            var newPageUrlNO = "nakazilo.php";
+
+            var proceed = confirm("Are you sure you want to transfer money?");
+            if (proceed) {
+                alert("Transaction successful!");
+                window.location.href = newPageUrlOK;
+            } else {
+                window.location.href = newPageUrlNO;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h3>Transfer money</h3>
+    </header>
+
+    <main>
+        <form action="../scripts/nakazilo.php" method="post">
+            <input type="text" name="recipient_username" placeholder="Uporabniško ime prejemnika"
+                class="recipient-username">
+            <input type="number" name="amount" placeholder="Količina (€)" class="amount">
+            <input type="text" name="description" placeholder="Opis" class="description">
+            <br><br>
+            <button type="submit" class="gumb" onclick="novaStran()">Confirm</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Meni</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="icon" type="image/x-icon" href="slike/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript">
+        function preveri() {
+            var newPageUrlOK = "../scripts/izbrisiRacun.php";
+            var newPageUrlNO = "meni.html";
+
+            var proceed = confirm("Continuing will permanently delete your account.");
+            if (proceed) {
+                alert("User clicked OK");
+                window.location.href = newPageUrlOK;
+            }
+            else {
+                window.location.href = newPageUrlNO;
+            }
+        }
+
+        function novaStranRacun() {
+            var newPageUrl = "dodajRacun.html";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranSeznam() {
+            var newPageUrl = "seznam.php";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranOdjava() {
+            var newPageUrl = "../index.html";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranZamenjajGeslo() {
+            var newPageUrl = "menjavaGesla.html";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranBitcoin() {
+            var newPageUrl = "bitcoin.php";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranAboutUs() {
+            var newPageUrl = "aboutUs.html";
+            window.location.href = newPageUrl;
+            return false;
+        }
+
+        function novaStranAdmin() {
+            var newPageUrl = "administrator.php";
+            window.location.href = newPageUrl;
+            return false;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <main>
+        <div class="meni">
+            <p class="gumbMeni" onclick="return novaStranZamenjajGeslo()"><i class="fas fa-pen"> &nbsp </i>Change Password</p>
+            <p class="gumbMeni" onclick="preveri()"><i class="fas fa-trash"> &nbsp </i>Delete Account</p>
+            <p class="gumbMeni"><i class="fas fa-globe"> &nbsp </i>Language</p>
+            <p class="gumbMeni" onclick="return novaStranRacun()"><i class="fas fa-plus"> &nbsp </i>Add Bank Account</p>
+            <p class="gumbMeni" onclick="return novaStranSeznam()"><i class="fas fa-file"> &nbsp </i>User List</p>
+            <p class="gumbMeni" onclick="return novaStranAboutUs()"><i class="fas fa-users"></i> &nbsp </i>About Us</p>
+            <p class="gumbMeni" onclick="return novaStranAdmin()"><i class="fas fa-shield-alt"></i> &nbsp </i>Login As Admin</p>
+            <p class="gumbMeni" onclick="return novaStranBitcoin()"><i class="fab fa-bitcoin"> &nbsp </i>Bitcoin Mining</p>
+            <p class="gumbMeni" onclick="return novaStranOdjava()"><i class="fas fa-arrow-left"></i> &nbsp </i>Log Out</p>
+        </div>
+    </main>
+
+    <footer>
+        <p><i>&copy; 2025 Online bank</i></p>
+    </footer>
+
+</body>
+
+</html>
